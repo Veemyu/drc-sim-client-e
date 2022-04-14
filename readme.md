@@ -28,6 +28,8 @@ DRC Sim Server uses a Gradle build system.
 `./gradlew desktop:dist`
 
 Output: `./desktop/build/libs/desktop-<version>.jar`
+// Please note that on macOS your drc-sim-client needs to be started with the -XstartOnFirstThread JVM argument
+eg. java -XstartOnFirstThread -jar desktop-1.0.jar
 
 ## Android
 

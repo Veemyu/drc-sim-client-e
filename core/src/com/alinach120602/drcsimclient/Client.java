@@ -84,7 +84,8 @@ public class Client extends ApplicationAdapter {
 		}
 		Client.stage = stage;
 		Gdx.input.setInputProcessor(stage);
-		Gdx.input.setCatchBackKey(true);
+		//TODO Replacement? For deprecated boolean?
+        //Gdx.input.setCatchBackKey(true);
 	}
 
 	/**

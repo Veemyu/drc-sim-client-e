@@ -41,6 +41,11 @@ task dist(type: Jar) {
     with jar
 }
 
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-Xlint:deprecation']
+}
+
+
 
 dist.dependsOn classes
 

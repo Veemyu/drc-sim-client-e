@@ -1,5 +1,6 @@
 package com.alinach120602.drcsimclient.stage;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.controllers.Controllers;
@@ -8,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.Gdx;
 import com.alinach120602.drcsimclient.Client;
 import com.alinach120602.drcsimclient.graphics.TextUtil;
 import com.alinach120602.drcsimclient.util.PreferencesUtil;
@@ -88,7 +90,8 @@ public class StageLoad extends Stage {
 			return;
 		}
 		// Load Controllers - A Windows issue causes this to hangs occasionally.
-		Controllers.getControllers();
+		if(Gdx.app.getType() != Application.ApplicationType.iOS) {
+		Controllers.getControllers();} //TODO
 		//loading.setText(String.format(Locale.US,"Launching %d%%", 100));
 
 		Preferences preferences = PreferencesUtil.get("general");

@@ -12,8 +12,11 @@ import com.alinach120602.drcsimclient.control.ControlTouch;
 import com.alinach120602.drcsimclient.data.ArgumentParser;
 //import com.alinach120602.drcsimclient.data.Constants;
 import com.alinach120602.drcsimclient.desktop.audio.Audio;
-// TODO LWJGL O
-// Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
+/*
+TODO LWJGL O
+Please note that on macOS your application needs to be started with the -XstartOnFirstThread JVM argument
+https://jvm-gaming.org/t/starting-jvm-on-mac-with-xstartonfirstthread-programmatically/57547
+*/
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();

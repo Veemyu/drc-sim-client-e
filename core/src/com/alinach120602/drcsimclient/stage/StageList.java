@@ -1,5 +1,6 @@
 package com.alinach120602.drcsimclient.stage;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.Controllers;
@@ -11,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.Gdx;
 import com.alinach120602.drcsimclient.Client;
 import com.alinach120602.drcsimclient.graphics.TextUtil;
 import com.alinach120602.drcsimclient.util.logging.Logger;
@@ -80,10 +82,13 @@ public class StageList extends Stage {
 		selectBoxStyle.scrollStyle.background = selectBoxStyle.background;
 		dropdown = new SelectBox<String>(selectBoxStyle);
 		dropdown.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight() * .1f);
+
+		if(Gdx.app.getType() != Application.ApplicationType.iOS) {
+
 		for (Controller controller : Controllers.getControllers()) {
 			dropdown.getItems().add(controller.getName());
 			dropdown.setItems(dropdown.getItems().toArray());
-		}
+		}}
 		if (enableDropdown)
 			addActor(dropdown);
 	}

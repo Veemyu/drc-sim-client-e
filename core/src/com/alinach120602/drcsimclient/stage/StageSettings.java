@@ -17,17 +17,18 @@ public class StageSettings extends StageList {
 		// Title
 		setTitle("Settings");
 		// Control settings//TODO
-		if(Gdx.app.getType() != Application.ApplicationType.iOS) {
+		if (Gdx.app.getType() != Application.ApplicationType.iOS) {
 			//Do awesome stuff for iOS here
 
-		for (Control control : Client.controls) {
-			if (control instanceof ControlKeyboard)
-				addStageChangeItem("Keyboard Settings", StageConfigKeyboard.class);
-			if (control instanceof ControlController)
-				addStageChangeItem("Controller Settings", StageConfigController.class);
-			if (control instanceof ControlTouch)
-				addStageChangeItem("Touch Settings", StageConfigTouch.class);
-		}}
+			for (Control control : Client.controls) {
+				if (control instanceof ControlKeyboard)
+					addStageChangeItem("Keyboard Settings", StageConfigKeyboard.class);
+				if (control instanceof ControlController)
+					addStageChangeItem("Controller Settings", StageConfigController.class);
+				if (control instanceof ControlTouch)
+					addStageChangeItem("Touch Settings", StageConfigTouch.class);
+			}
+		}
 		addStageChangeItem("General Settings", StageConfigGeneral.class);
 		// Info
 		addStageChangeItem("Info", StageInfo.class);

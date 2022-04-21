@@ -1,4 +1,4 @@
-package com.alinach120602.drcsimclient.ios;
+package com.alinach120602.drcsimclient;
 
 import com.alinach120602.drcsimclient.Client;
 import com.alinach120602.drcsimclient.control.Control;

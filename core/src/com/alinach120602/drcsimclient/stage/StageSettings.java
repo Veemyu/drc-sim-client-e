@@ -18,8 +18,7 @@ public class StageSettings extends StageList {
 		setTitle("Settings");
 		// Control settings//TODO
 		if (Gdx.app.getType() != Application.ApplicationType.iOS) {
-			//Do awesome stuff for iOS here
-
+			//Do awesome stuff for iOS here -alina
 			for (Control control : Client.controls) {
 				if (control instanceof ControlKeyboard)
 					addStageChangeItem("Keyboard Settings", StageConfigKeyboard.class);

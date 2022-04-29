@@ -1,5 +1,6 @@
 package com.alinach120602.drcsimclient.stage;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
@@ -44,12 +45,14 @@ public class StageControl extends Stage {
 		spritebatch = new SpriteBatch();
 		// Screen touchable
 		wiiScreen = new Button(new Button.ButtonStyle());
-		wiiScreen.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		//TODO EXPERIMENT
+		wiiScreen.setBounds(0, 0, 854, 480);
 		wiiImage = new Texture("image/placeholder.png");
 		addActor(wiiScreen);
 		// Initialize controls
+		if (Gdx.app.getType() != Application.ApplicationType.iOS) {
 		for (Control control : controls)
-			control.init(this);
+			control.init(this);}
 		// Audio
 		audioThread = new AudioThread();
 		audioThread.start();
@@ -77,7 +80,7 @@ public class StageControl extends Stage {
 	public void draw() {
 		spritebatch.begin();
 		if (wiiImage != null)
-			spritebatch.draw(wiiImage, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+			spritebatch.draw(wiiImage, 0, 0, 854, 480);
 		spritebatch.end();
 		super.draw();
 	}
@@ -94,8 +97,9 @@ public class StageControl extends Stage {
 			sockets.sendTouchScreenInput((short) Gdx.input.getX(), (short) Gdx.input.getY(),
 					(short) Gdx.graphics.getWidth(), (short) Gdx.graphics.getHeight());
 		// Update controls
+		if (Gdx.app.getType() != Application.ApplicationType.iOS) {
 		for (Control control : controls)
-			control.update();
+			control.update();}
 	}
 
 	private void checkNetworkCommands() {

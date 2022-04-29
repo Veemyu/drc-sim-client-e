@@ -41,6 +41,7 @@ public class StageConnect extends Stage {
 		textfield.setBounds(Gdx.graphics.getWidth() * .15f, Gdx.graphics.getHeight() * .6f,
 				Gdx.graphics.getWidth() * .7f, Gdx.graphics.getHeight() * .1f);
 		textfield.setMessageText("hostname or ip");
+		//textfield.setAlignment(Align.center);
 		lastHostPreferences = PreferencesUtil.get("general");
 		textfield.setText(lastHostPreferences.getString("lastHost"));
 		addActor(textfield);
@@ -55,6 +56,7 @@ public class StageConnect extends Stage {
 		connectButton.setBounds(textfield.getX() + textfield.getWidth() * .1f,
 				textfield.getY() - textfield.getHeight() - textfield.getHeight() * .5f,
 				connectButton.getWidth(), connectButton.getHeight());
+		//textfield.setAlignment(Align.center);
 		connectButton.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -66,6 +68,8 @@ public class StageConnect extends Stage {
 		TextButton searchButton = new TextButton("Search", connectButtonStyle);
 		searchButton.setBounds(connectButton.getX() + connectButton.getWidth() + marginX * 6,
 				connectButton.getY(), searchButton.getWidth(), searchButton.getHeight());
+		//textfield.setAlignment(Align.center);
+//TODO Half-width Margin between to center nice buttons
 		searchButton.addListener(new ClickListener(){
 			@Override
 			public void clicked(InputEvent event, float x, float y) {

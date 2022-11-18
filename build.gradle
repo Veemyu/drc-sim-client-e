@@ -22,13 +22,15 @@ allprojects {
     version = '1.0'
     ext {
         appName = "drc-sim-client-e"
-        gdxVersion = '1.10.0'
+        gdxVersion = '1.10.1-SNAPSHOT'
         roboVMVersion = '2.3.16'
         box2DLightsVersion = '1.5'
         ashleyVersion = '1.7.4'
         aiVersion = '1.8.2'
         guavaVersion = '19.0'
         gdxControllersVersion = '2.2.1'
+        lwjgl3Version = '3.3.0-SNAPSHOT'
+        jamepadVersion = '2.0.14.2'
     }
 
     repositories {
@@ -40,6 +42,8 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
         maven { url "https://jitpack.io" }
     }
+
+    
 }
 
 project(":desktop") {
@@ -48,6 +52,58 @@ project(":desktop") {
 
     dependencies {
         implementation project(":core")
+        implementation "org.lwjgl:lwjgl:$lwjgl3Version"
+        implementation "com.badlogicgames.jamepad:jamepad:$jamepadVersion"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl:$lwjgl3Version:natives-windows-x86"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl-glfw:$lwjgl3Version:natives-windows-x86"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl-jemalloc:$lwjgl3Version:natives-windows-x86"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl-opengl:$lwjgl3Version:natives-windows-x86"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl-openal:$lwjgl3Version:natives-windows-x86"
+    
+    //Additional LWJGL3 modules
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-linux"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-linux-arm32"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-linux-arm64"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-macos"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-macos-arm64"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-windows"
+    implementation "org.lwjgl:lwjgl-tinyfd:$lwjgl3Version:natives-windows-x86"
+
         api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
